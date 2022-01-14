@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.20)
+
+project(glad VERSION 0.1 LANGUAGES C)
+
+add_library(glad src/glad.c include/KHR/khrplatform.h include/glad/glad.h)
+
+target_include_directories(
+	glad
+	PUBLIC 	$<INSTALL_INTERFACE:include>
+		    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+	PRIVATE ${CMAKE_CURRENT_SOURCE_DIR}/src
+)
