@@ -19,6 +19,7 @@ set(glm_DIR /lib/glm)
 add_subdirectory(lib/glfw/)
 add_subdirectory(lib/glm/)
 add_subdirectory(lib/glad/)
+add_subdirectory(lib/luajit)
 
 set(SOURCE_FILES
 	src/Main.cpp
@@ -28,4 +29,4 @@ set(SOURCE_FILES
 
 #Add the executable and all the libraries it needs
 add_executable(GraphicsPrototype ${SOURCE_FILES})
-target_link_libraries(GraphicsPrototype PRIVATE glfw glm::glm glad)
+target_link_libraries(GraphicsPrototype PRIVATE glfw glm::glm glad libluajit)
